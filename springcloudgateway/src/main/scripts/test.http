@@ -1,0 +1,28 @@
+### test get
+GET http://localhost:8080/get
+Accept: application/json
+
+### test get2
+GET http://localhost:8080/get2
+Accept: application/json
+
+### test .circuit breaker
+GET http://localhost:8080/delay/3
+Host: www.circuitbreaker.com
+
+> {%
+client.test("Request executed fail", function() {
+  client.assert(response.status === 504, "Response status is not 504");
+});
+%}
+
+### test .circuit breaker with fallback
+GET http://localhost:8080/delay/3
+Host: www.circuitbreaker2.com
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+  client.assert(response.body.toString() === "fallback", "body is not fallback");
+});
+%}

@@ -1,0 +1,8 @@
+spring.cloud.gateway.routes:
+  - id: test1
+    uri: http://httpbin.org/
+    predicates:
+      - Path=/get2
+    filters:
+      - AddRequestHeader=X-Request-red, blue
+      - My
