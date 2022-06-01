@@ -38,6 +38,15 @@ import top.sailingsan.dl4j.utils.DownloaderUtility;
 public class IrisClassifier {
 
     public static void main(String[] args) {
+        System.setProperty("org.bytedeco.javacpp.logger.debug","true");
+
+        System.out.println(System.getProperty("os.name"));
+        System.out.println(System.getProperty("os.version"));
+        System.out.println(System.getProperty("os.arch"));
+        System.out.println(System.getProperty("java.vm.name"));
+        System.out.println(System.getProperty("java.vm.version"));
+        System.out.println(System.getProperty("org.bytedeco.javacpp.logger.debug"));
+
         // 1. get the dataset using the record reader. CSVRecordReader handles loading/parsing
         RecordReader recordReader = new CSVRecordReader();
         try {
