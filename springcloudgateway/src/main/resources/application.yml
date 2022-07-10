@@ -5,4 +5,26 @@ spring.cloud.gateway.routes:
       - Path=/get2
     filters:
       - AddRequestHeader=X-Request-red, blue
+      - SetPath=/anything
       - My
+
+server:
+  port: 8080
+
+
+management:
+  endpoint:
+    gateway.enabled: true
+
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
+
+spring:
+  cloud:
+    gateway:
+      metrics:
+        enabled: true

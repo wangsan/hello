@@ -3,7 +3,7 @@ package top.sailingsan.dl4j.lesson2.lr;
 import java.util.List;
 import java.util.Random;
 
-import org.deeplearning4j.datasets.iterator.utilty.ListDataSetIterator;
+import org.deeplearning4j.datasets.iterator.impl.ListDataSetIterator;
 import org.deeplearning4j.nn.api.OptimizationAlgorithm;
 import org.deeplearning4j.nn.conf.MultiLayerConfiguration;
 import org.deeplearning4j.nn.conf.NeuralNetConfiguration;
@@ -51,7 +51,7 @@ public class SingleLineRegression {
         net.init();
         log.info("net is {}", net.summary());
 
-//        net.setListeners(new ScoreIterationListener(10));
+        net.setListeners(new ScoreIterationListener(10));
 
         double[] input = new double[dataLength];
         double[] output = new double[dataLength];

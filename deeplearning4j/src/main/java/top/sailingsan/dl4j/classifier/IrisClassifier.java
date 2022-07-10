@@ -38,7 +38,7 @@ import top.sailingsan.dl4j.utils.DownloaderUtility;
 public class IrisClassifier {
 
     public static void main(String[] args) {
-//        System.setProperty("org.bytedeco.javacpp.logger.debug","true");
+        //        System.setProperty("org.bytedeco.javacpp.logger.debug", "true");
 
         System.out.println(System.getProperty("os.name"));
         System.out.println(System.getProperty("os.version"));

@@ -2,12 +2,8 @@ package top.sailingsan.scg;
 
 import java.time.Duration;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.circuitbreaker.resilience4j.ReactiveResilience4JCircuitBreakerFactory;
 import org.springframework.cloud.circuitbreaker.resilience4j.Resilience4JConfigBuilder;
 import org.springframework.cloud.gateway.route.RouteLocator;
@@ -26,17 +22,13 @@ import reactor.core.publisher.Mono;
  */
 @SpringBootApplication
 @RestController
-@EnableConfigurationProperties(Application.UriConfiguration.class)
 public class Application {
-    final Logger log = LoggerFactory.getLogger(Application.class);
-
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
 
     @Bean
-    public RouteLocator myRoutes(RouteLocatorBuilder builder, UriConfiguration uriConfiguration) {
-        String httpUri = uriConfiguration.getHttpbin();
+    public RouteLocator myRoutes(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route(p -> p
                         .path("/get")
@@ -70,7 +62,6 @@ public class Application {
 
     @Bean
     public ReactiveResilience4JCircuitBreakerFactory defaultCustomizer() {
-
         CircuitBreakerConfig circuitBreakerConfig = CircuitBreakerConfig.custom() //
                 .slidingWindowType(CircuitBreakerConfig.SlidingWindowType.TIME_BASED) // 滑动窗口的类型为时间窗口
                 .slidingWindowSize(60) // 时间窗口的大小为60秒
@@ -88,20 +79,6 @@ public class Application {
                 .circuitBreakerConfig(circuitBreakerConfig).build());
 
         return factory;
-    }
-
-    @ConfigurationProperties(prefix = "gateway")
-    public class UriConfiguration {
-
-        private String httpbin = "http://httpbin.org:80";
-
-        public String getHttpbin() {
-            return httpbin;
-        }
-
-        public void setHttpbin(String httpbin) {
-            this.httpbin = httpbin;
-        }
     }
 
 }

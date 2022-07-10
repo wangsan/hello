@@ -15,7 +15,8 @@
 		<module>projectreactive</module>
 		<module>deeplearning4j</module>
 		<module>leetcode</module>
-	</modules>
+        <module>javacpp</module>
+    </modules>
 
 	<packaging>pom</packaging>
 
