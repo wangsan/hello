@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2022 Baidu, Inc. All Rights Reserved.
  */
-package top.sailingsan.dl4j.classifier;
+package top.sailingsan.dl4j.example;
 
 import java.io.File;
 
