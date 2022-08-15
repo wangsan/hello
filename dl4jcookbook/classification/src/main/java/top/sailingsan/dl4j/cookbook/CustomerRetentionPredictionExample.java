@@ -114,7 +114,7 @@ public class CustomerRetentionPredictionExample {
         multiLayerNetwork.init();
         multiLayerNetwork.setListeners(new ScoreIterationListener(100), new StatsListener(statsStorage));
         uiServer.attach(statsStorage);
-        multiLayerNetwork.fit(dataSetIteratorSplitter.getTrainIterator(), 100);
+        multiLayerNetwork.fit(dataSetIteratorSplitter.getTrainIterator(), 2);
 
         final Evaluation evaluation =
                 multiLayerNetwork.evaluate(dataSetIteratorSplitter.getTestIterator(), Arrays.asList("0", "1"));

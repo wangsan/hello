@@ -16,6 +16,7 @@
 		<module>deeplearning4j</module>
 		<module>leetcode</module>
         <module>javacpp</module>
+        <module>dl4jcookbook</module>
     </modules>
 
 	<packaging>pom</packaging>
