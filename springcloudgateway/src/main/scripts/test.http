@@ -43,3 +43,34 @@ client.test("Request executed successfully", function() {
   client.assert(response.body.toString() === "fallback", "body is not fallback");
 });
 %}
+
+### saveroute
+POST http://127.0.0.1:8080/route/save
+Content-Type: application/json
+
+{
+  "id" : "routeMem1",
+  "uri" : "http://httpbin.org/",
+  "order" : 3,
+  "predicates" : [ {
+    "name" : "Path",
+    "args" : {
+      "_genkey_0" : "/get3"
+    }
+  } ],
+  "filters" : [ {
+    "name" : "SetPath",
+    "args" : {
+      "_genkey_0" : "/anything"
+    }
+  } ]
+}
+
+### get route list
+GET http://127.0.0.1:8080/route/list
+
+
+### test get2
+GET http://localhost:8080/get3
+Accept: application/json
+
