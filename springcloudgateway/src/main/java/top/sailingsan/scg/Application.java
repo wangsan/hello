@@ -56,8 +56,8 @@ public class Application {
     }
 
     @Bean
-    public MyGlobalFilter myGlobalFilter() {
-        return new MyGlobalFilter();
+    public GatewayLogFilter gatewayLogFilter() {
+        return new GatewayLogFilter();
     }
 
     @Bean

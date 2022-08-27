@@ -1,30 +1,29 @@
-spring.cloud.gateway.routes:
-  - id: test1
-    uri: http://httpbin.org/
-    predicates:
-      - Path=/get2
-    filters:
-      - AddRequestHeader=X-Request-red, blue
-      - SetPath=/anything
-      - My
+logging.level.org.springframework.cloud.gateway: TRACE
+
+spring.cloud.gateway:
+  metrics:
+    enabled: true
+  routes:
+    - id: test1
+      uri: http://httpbin.org/
+      predicates:
+        - Path=/get2
+      filters:
+        - AddRequestHeader=X-Request-red, blue
+        - SetPath=/anything
+        - My
+    - id: ws-test
+      uri: ws://localhost:9000
+      predicates:
+        - Path=/echo
 
 server:
   port: 8080
 
-
 management:
   endpoint:
     gateway.enabled: true
-
   endpoints:
-    web:
-      exposure:
-        include: "*"
+    web.exposure.include: "*"
 
 
-
-spring:
-  cloud:
-    gateway:
-      metrics:
-        enabled: true

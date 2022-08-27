@@ -15,6 +15,8 @@
     <name>dl4jcookbook</name>
     <modules>
         <module>classification</module>
+        <module>facereid</module>
+        <module>vggfacereid</module>
     </modules>
 
     <properties>
@@ -36,13 +38,20 @@
             <artifactId>deeplearning4j-core</artifactId>
             <version>${dl4j-master.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.deeplearning4j</groupId>
+            <artifactId>deeplearning4j-zoo</artifactId>
+            <version>${dl4j-master.version}</version>
+        </dependency>
+
         <!--
            ND4J backend: every project needs one of these. The backend defines the hardware on which network training
            will occur. "nd4j-native-platform" is for CPUs only (for running on all operating systems).
            -->
         <dependency>
             <groupId>org.nd4j</groupId>
-            <artifactId>nd4j-native</artifactId>
+            <artifactId>nd4j-native-platform</artifactId>
             <version>${dl4j-master.version}</version>
         </dependency>
 

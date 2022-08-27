@@ -6,6 +6,23 @@ Accept: application/json
 GET http://localhost:8080/get2
 Accept: application/json
 
+### test get2-json
+GET http://localhost:8080/get2?foo=bar
+Content-Type: application/json
+
+{
+  "hei":"har"
+}
+
+### test get2-formurl
+GET http://localhost:8080/get2?foo=bar
+Content-Type: application/x-www-form-urlencoded
+
+id=999&value=content
+
+
+
+
 ### test .circuit breaker
 GET http://localhost:8080/delay/3
 Host: www.circuitbreaker.com
