@@ -17,7 +17,8 @@
 		<module>leetcode</module>
         <module>javacpp</module>
         <module>dl4jcookbook</module>
-    </modules>
+		<module>netty-media</module>
+	</modules>
 
 	<packaging>pom</packaging>
 
