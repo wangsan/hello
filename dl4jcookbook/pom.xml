@@ -17,6 +17,7 @@
         <module>classification</module>
         <module>facereid</module>
         <module>vggfacereid</module>
+        <module>cnn</module>
     </modules>
 
     <properties>
