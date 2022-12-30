@@ -36,7 +36,7 @@ public class Demo {
         // DC1394FrameGrabber, FlyCapture2FrameGrabber, OpenKinectFrameGrabber, OpenKinect2FrameGrabber,
         // RealSenseFrameGrabber, RealSense2FrameGrabber, PS3EyeFrameGrabber, VideoInputFrameGrabber, and FFmpegFrameGrabber.
 //        FrameGrabber grabber = FrameGrabber.createDefault(0);
-        FrameGrabber grabber = FrameGrabber.createDefault(1); // 使用摄像头，由于obs是0
+        FrameGrabber grabber = FrameGrabber.createDefault(0); // 使用摄像头
         grabber.start();
 
         // CanvasFrame, FrameGrabber, and FrameRecorder use Frame objects to communicate image data.

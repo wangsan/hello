@@ -18,19 +18,24 @@
         <dependency>
             <groupId>org.bytedeco</groupId>
             <artifactId>javacpp</artifactId>
-            <version>1.5.7</version>
+            <version>1.5.8</version>
         </dependency>
-
         <dependency>
             <groupId>org.bytedeco</groupId>
             <artifactId>javacv-platform</artifactId>
-            <version>1.5.7</version>
+            <version>1.5.8</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
             <version>5.3.22</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.8.2</version>
         </dependency>
     </dependencies>
 
@@ -39,7 +44,7 @@
             <plugin>
                 <groupId>org.bytedeco</groupId>
                 <artifactId>javacpp</artifactId>
-                <version>1.5.7</version>
+                <version>1.5.8</version>
                 <configuration>
                     <classPath>${project.build.outputDirectory}</classPath>
                     <includePaths>
