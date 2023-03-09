@@ -21,9 +21,9 @@ server:
   port: 8080
 
 management:
-  endpoint:
-    gateway.enabled: true
-  endpoints:
-    web.exposure.include: "*"
+  endpoints.web.exposure.include: route, health, info
+  endpoint.gateway.enabled: false # 默认为false
+  metrics.tags:
+    application: "san-test-gateway"
 
 

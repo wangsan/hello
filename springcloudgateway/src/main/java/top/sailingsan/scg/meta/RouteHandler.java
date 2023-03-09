@@ -1,4 +1,4 @@
-package top.sailingsan.scg;
+package top.sailingsan.scg.meta;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.web.reactive.function.server.ServerResponse.notFound;

@@ -11,6 +11,8 @@ import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.RouterFunctions;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
+import top.sailingsan.scg.meta.RouteHandler;
+
 /**
  * @author wangsan
  * @see <a href="https://spring.io/guides/gs/gateway/">example</a></a>

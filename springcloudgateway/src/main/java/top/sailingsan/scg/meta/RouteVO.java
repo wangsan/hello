@@ -1,4 +1,4 @@
-package top.sailingsan.scg;
+package top.sailingsan.scg.meta;
 
 import java.util.HashMap;
 import java.util.List;

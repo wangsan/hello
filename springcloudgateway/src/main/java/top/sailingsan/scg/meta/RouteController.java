@@ -1,4 +1,4 @@
-package top.sailingsan.scg;
+package top.sailingsan.scg.meta;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.route.InMemoryRouteDefinitionRepository;
